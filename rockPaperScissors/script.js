@@ -86,4 +86,17 @@ function playRound(){
         console.log("Your wins: "+playerWins+"  Computer Wins: "+computerWins)
 }
 
+function playGame(){
+    i=1;
+    while(i<=5){
+        playRound();
+        i++;
+    }
+}
+gameLength=prompt("Round or Game?");
+if(gameLength==="Round"){
 playRound();
+}
+else if(gameLength==="Game"){
+    playGame();
+}
