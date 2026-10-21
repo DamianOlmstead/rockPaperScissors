@@ -26,8 +26,6 @@ function getHumanChoice(){
 }
 
 function whoWins(computerChoice, userChoice){
-    console.log(userChoice);
-    console.log(computerChoice);
     switch(true){
     case (userChoice==="Rock"):
         if(computerChoice==="Rock"){
@@ -85,6 +83,7 @@ function playRound(){
         console.log("You Chose: "+ userChoice);
         console.log("Computer chose: "+computerChoice);
         console.log(displayMessage);
+        console.log("Your wins: "+playerWins+"  Computer Wins: "+computerWins)
 }
 
 playRound();
