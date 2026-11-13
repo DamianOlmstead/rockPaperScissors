@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel=""stylesheet' href="'style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!--This is a comment-->
-  <button class="rpsButtons">Rock</button>
-  <button class="rpsButtons">Paper</button>
-  <button class="rpsButtons">Scissors</button>
+    <h1>Rock Paper Scissors</h1>
+  <div class="results">
+    <div class="wins">Wins: 0</div>
+    <div class="ties">Ties: 0</div>
+    <div class="losses">Losses: 0</div>
+  </div>
 
-  <div class="results"></div>
+    <div class="buttonContainer">
+  <button class="rpsButtons" id="rockButton">Rock</button>
+  <button class="rpsButtons" id="paperButton">Paper</button>
+  <button class="rpsButtons" id="scissorButton">Scissors</button>
+</div>
+
+  
 </body>
 </html>

@@ -3,10 +3,24 @@ let outcomeLoss="You Lose";
 let outcomeTie="You Tie"
 let playerWins=0;
 let computerWins=0;
+let tieCounter=0;
 let displayMessage="";
+const rockButton=document.getElementById('rockButton');
+const paperButton=document.getElementById('paperButton');
+const scissorButton=document.getElementById('scissorButton');
+const winDisplay=document.querySelector(".wins");
+const tieDisplay=document.querySelector(".ties");
+const lossDisplay=document.querySelector(".losses");
+
+rockButton.addEventListener("click",() => playRound("Rock"));
+paperButton.addEventListener("click",() => playRound("Paper"));
+scissorButton.addEventListener("click",() => playRound("Scissors"));
+
+
+
+
 function getComputerChoice(){
     let randomNumber=Math.floor(Math.random()*3)
-    console.log(randomNumber);
 if(randomNumber===0){
     computerChoice="Rock"
 }
@@ -19,10 +33,9 @@ else if(randomNumber===2){
     return computerChoice
 }
 
-function getHumanChoice(){
-   userChoice=prompt("Please enter Rock, Paper or Scissors")
-   return userChoice;
-    
+
+function getHumanChoice(choice){
+   return choice;
 }
 
 function whoWins(computerChoice, userChoice){
@@ -72,31 +85,36 @@ function whoWins(computerChoice, userChoice){
 }
 
 
-function playRound(){
-    whoWins(getHumanChoice(),getComputerChoice());
+function playRound(userChoice){
+    whoWins(userChoice,getComputerChoice());
     if(displayMessage===outcomeWin){
         playerWins++;
     }
     else if(displayMessage===outcomeLoss){
         computerWins++;
     }
-        console.log("You Chose: "+ userChoice);
-        console.log("Computer chose: "+computerChoice);
-        console.log(displayMessage);
-        console.log("Your wins: "+playerWins+"  Computer Wins: "+computerWins)
-}
-
-function playGame(){
-    i=1;
-    while(i<=5){
-        playRound();
-        i++;
+    else if(displayMessage===outcomeTie){
+        tieCounter++;
     }
-}
-gameLength=prompt("Round or Game?");
-if(gameLength==="Round"){
-playRound();
-}
-else if(gameLength==="Game"){
-    playGame();
+    if(playerWins===5){
+        winDisplay.textContent="YOU WIN";
+       lossDisplay.textContent="YOU WIN";
+       tieDisplay.textContent="YOU WIN";
+       playerWins=0;
+       computerWins=0;
+       tieCounter=0;
+    }
+        else if(computerWins===5){
+        winDisplay.textContent="YOU LOSE";
+       lossDisplay.textContent="YOU LOSE";
+       tieDisplay.textContent="YOU LOSE";
+       playerWins=0;
+       computerWins=0;
+       tieCounter=0;
+    }
+    else{
+       winDisplay.textContent="Wins: "+ playerWins;
+       lossDisplay.textContent="Losses: " + computerWins;
+       tieDisplay.textContent="Ties: "+tieCounter;
+    }
 }

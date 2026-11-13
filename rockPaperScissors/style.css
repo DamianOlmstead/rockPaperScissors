@@ -1,0 +1,38 @@
+body{
+    text-align: center;
+    margin:0;
+}
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;     
+  gap: 16px;               
+  min-height: 10vh;       
+  width: 100%;
+
+}
+.rpsButtons{
+    flex:1;
+    padding:10px;
+    margin:10px;
+    
+}
+.results{
+      display: flex;
+  justify-content: center;
+  align-items: center;     
+  gap: 16px;               
+  min-height: 50vh;       
+  width: 100%;
+}
+.wins,
+.ties,
+.losses{
+    display:flex;
+    flex:1;
+    min-height: 10vh;
+    width:100%;
+    background-color:yellow;
+    justify-content: center;
+    align-items: center;
+}
