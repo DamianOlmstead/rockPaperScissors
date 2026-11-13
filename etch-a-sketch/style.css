@@ -1,0 +1,34 @@
+h1{
+    text-align: center;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    display:flex;
+    min-height:100vh;
+    width:80%;
+    padding:10px;
+}
+.row{
+    display:flex;
+    flex-direction: column;
+}
+.row,
+.column{
+    flex:1;
+    border:1px solid black;
+    background-color: aqua;
+}
+.userInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.userInput > *{
+    margin:10px;
+}
